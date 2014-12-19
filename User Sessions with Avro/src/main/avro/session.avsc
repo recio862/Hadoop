@@ -1,0 +1,87 @@
+{"namespace": "com.refactorlabs.cs378",
+  "type": "record",
+  "name": "Session",
+  "fields": [
+      {"name": "user_id", "type": ["string", "null"], "default": "null" },
+      {"name": "api_key", "type": ["string", "null"], "default": "null" },
+      {"name": "user_agent", "type": ["string", "null"], "default": "null" },
+      {"name": "resolution", "type": ["string", "null"], "default": "null" },
+      // Add additional session fields here
+      {"name": "activex", "type": {"type": "enum",
+                                   "name": "ActiveX",
+                                   "symbols": [ "ENABLED", "NOT_SUPPORTED" ],
+                                   "default": "NOT_SUPPORTED"
+                                   },
+                                   "default": "NOT_SUPPORTED"
+      },
+       {"name": "impressions",
+       "type": {"type": "array",
+                "items": {"type": "record",
+                          "name": "Impression",
+                          "fields": [
+                          {"name": "impression_type",
+                               "type": {"type": "enum",
+                                        "name": "ImpressionType",
+                                        "symbols": [ "ACTION", "VDP", "SRP" ],
+                                        "default": "SRP"
+                                       },
+                                         "default": "SRP"
+                               },
+                              {"name": "action",
+                               "type": {"type": "enum", "name": "Action",
+                                        "symbols": [ "CLICK", "PAGE_VIEW" ],
+                                        "default": "PAGE_VIEW"
+                                       },  
+                                       "default": "PAGE_VIEW"
+                              },
+                          {"name": "action_name",
+                               "type": {"type": "enum", "name": "ActionName",
+                                        "symbols": [ "DEALER_PAGE_VIEWED", "VIEWED_CARFAX_REPORT", "VIEWED_CARFAX_REPORT_UNHOSTED", "MORE_PHOTOS_VIEWED", "DEALER_WEBSITE_VIEWED", "NONE" ],
+                                        "default": "NONE"},
+                                        "default": "NONE"
+                              },
+                           
+{
+ "name": "id",
+ "type": {"type": "array",
+ "items": {
+       "name": "id",
+       "type": "long"
+   
+       }
+   }
+},
+
+
+   						   {"name": "timestamp", "type": ["long", "null"], "default": 0 },
+   						   {"name": "ab", "type": ["string", "null"], "default": "null" },
+    					    {"name": "vertical",
+                               "type": {"type": "enum", "name": "Vertical",
+                                        "symbols": [ "CARS", "NONE" ],
+                                        "default": "NONE"},
+                                        "default": "NONE"
+                              },
+   						   {"name": "start_index", "type": ["int",  "null"], "default": 0 },
+   						   {"name": "total", "type": ["int",  "null"], "default": 0 },
+    					   {"name": "domain", "type":  ["string", "null"], "default": "null" },
+    					  {"name": "lat", "type": ["double",  "null"], "default": 0.0 },
+    					   {"name": "lon", "type": ["double", "null"], "default": 0.0 },
+   						   {"name": "address", "type": ["string", "null"], "default": "null" },
+   						   {"name": "city", "type": ["string", "null"], "default": "null" },
+   						   {"name": "zip", "type": ["string", "null"], "default": "null" },
+    					   {"name": "state", "type": ["string", "null"], "default": "null" },
+                     
+                              // Add additional impression fields here
+                              {"name": "phone_type",
+                               "type": {"type": "enum", "name": "PhoneType",
+                                        "symbols": [ "TRACKED", "NONE" ],
+                                        "default": "NONE"},
+                                        "default": "NONE"
+                              }
+                              
+                          ]
+                         }
+               }
+      }
+  ]
+}
